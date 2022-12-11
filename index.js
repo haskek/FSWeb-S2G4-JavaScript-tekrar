@@ -14,7 +14,7 @@ var sayilar = [45,856,12.5,63,0.02,154,2,54,78,61.7,654,26,12.5,63,969,152,32,31
 
 //Örneğin çözümü:
 function KareninAlani(kenaruzunlugu){
-	return kenaruzunlugu*kenaruzunlugu;
+	return Math.pow(kenaruzunlugu,2);
 }
 
 /* (Oto test yok) Yukarıdaki KareninAlani fonksiyonunu kenar uzunluğu = 10 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -29,10 +29,10 @@ function KareninAlani(kenaruzunlugu){
 			4. Hesaplanan çemberin çevresi döndürülecektir.
 		*/
 
-function CemberinCevresi(/* kodlar buraya */){
-	/* kodlar buraya */
+function CemberinCevresi(yarıcap){
+	return 2*pi*yarıcap ;
 }
-
+console.log(CemberinCevresi(10))
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -47,8 +47,8 @@ function CemberinCevresi(/* kodlar buraya */){
 			4. Hesaplanan çemberin alanı döndürülecektir.
 		*/
 		
-function CemberinAlani(/* kodlar buraya */){
-	/* kodlar buraya */
+function CemberinAlani(yarıcap,pisayısı){
+	return pi*Math.pow(yaricap,2);
 }
 
 
@@ -77,31 +77,54 @@ function CemberinAlani(/* kodlar buraya */){
 	
 	//3a çözümü
 
-	/* kodlar buraya */
-	
+	 var enkucuk=sayılar[0];
+	 var enbuyuk=sayılar[0];
+
+	 for (let i=0;i<sayilar.length;i++){
+		if (sayılar [i]<enkucuk){
+			enkucuk=sayılar[i];
+		}
+		if(sayilar[i]>enbuyuk){
+			enbuyuk=sayılar[i];
+		}
+
+	 }
+	 console.log(enbuyuk);
 	
 	
 	// 3b çözümü:
 
-	/* kodlar buraya */
+	ucetambolunenler=[];
+	sayilar.forEach(item=>{
+		if(item%3===0){
+			ucetambolunenler.push(item);
+		}
+	})
+	
+
+
 		
 		
 		
 	//3c çözümü:
 	
-	/* kodlar buraya */
-
-	
+     ucebolunenlerintoplami=ucetambolunenler.reduce((total,item)=>{
+		return total + item ;
+	 }
+	 )
+	console.log(ucebolunenlerintoplami)
 	
 	//3d çözümü
 	
-	/* kodlar buraya */
+	besyuzdenkucuksayilar=sayilar.filter[item=>item<500];
+	console.log(besyuzdenkucuksayilar);
 
 
 
 	//3e çözümü
-
-	/* kodlar buraya */
+	siralisayilar=besyuzdenkucuksayilar.sort(function(a,b){return a-b});
+	console.log(siralisayilar);
+    
 	
 	
 	//3f çözümü
